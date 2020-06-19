@@ -27,7 +27,7 @@ export default function (state = INITIAL_STATE, action) {
       };
     case SIGNUP_SUCCESS:
     case SIGNIN_SUCCESS:
-      localStorage.setItem("token", payload.token);
+      // localStorage.setItem("token", payload.token);
       return {
         ...state,
         ...payload,
@@ -38,12 +38,13 @@ export default function (state = INITIAL_STATE, action) {
     case SIGNIN_FAIL:
     case AUTH_USER_ERROR:
     case SIGNOUT:
-      localStorage.removeItem("token");
+      // localStorage.removeItem("token");
       return {
         ...state,
         token: null,
         authenticated: false,
         loading: false,
+        user: null,
       };
 
     default:
