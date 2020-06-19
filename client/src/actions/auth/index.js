@@ -10,10 +10,13 @@ import {
   CLEAR_PROFILE,
 } from "../types";
 import { setAlert } from "../alert";
-
+import setAuthToken from "../../utils/setAuthToken";
 //Load User
 
 export const loadUser = () => async (dispatch) => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
   try {
     const res = await api.get("/auth");
     dispatch({

@@ -9,14 +9,14 @@ const api = axios.create({
   },
 });
 
-api.interceptors.response.use(
-  (res) => res,
-  (err) => {
-    if (err.response.data.msg === "Token is not valid") {
-      store.dispatch({ type: SIGNOUT });
-    }
-    return Promise.reject(err);
-  }
-);
+// api.interceptors.response.use(
+//   (res) => res,
+//   (err) => {
+//     if (err.response.data.msg === "Token is not valid") {
+//       store.dispatch({ type: SIGNOUT });
+//     }
+//     return Promise.reject(err);
+//   }
+// );
 
 export default api;
