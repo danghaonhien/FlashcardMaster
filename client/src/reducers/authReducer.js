@@ -1,8 +1,8 @@
 import {
   SIGNUP_SUCCESS,
-  SIGNUP_FAIL,
+  // SIGNUP_FAIL,
   SIGNIN_SUCCESS,
-  SIGNIN_FAIL,
+  // SIGNIN_FAIL,
   USER_LOADED,
   AUTH_USER_ERROR,
   SIGNOUT,
@@ -25,7 +25,7 @@ export default function (state = INITIAL_STATE, action) {
         loading: false,
         user: payload,
       };
-    case SIGNUP_SUCCESS:
+
     case SIGNIN_SUCCESS:
       // localStorage.setItem("token", payload.token);
       return {
@@ -34,8 +34,16 @@ export default function (state = INITIAL_STATE, action) {
         authenticated: true,
         loading: false,
       };
-    case SIGNUP_FAIL:
-    case SIGNIN_FAIL:
+    case SIGNUP_SUCCESS:
+      // localStorage.setItem("token", payload.token);
+      return {
+        ...state,
+        ...payload,
+        authenticated: true,
+        loading: false,
+      };
+    // case SIGNUP_FAIL:
+    // case SIGNIN_FAIL:
     case AUTH_USER_ERROR:
     case SIGNOUT:
       // localStorage.removeItem("token");

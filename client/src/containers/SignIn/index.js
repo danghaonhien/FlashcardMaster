@@ -15,12 +15,11 @@ function SignIn({ signin, authenticated }) {
   const [formData, setFormData] = useState({ email: "", password: "" });
 
   const { email, password } = formData;
-  const onChange = (e) => {
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
   const onSubmit = (e) => {
     e.preventDefault();
-    signin({ email, password });
+    signin(email, password);
   };
 
   // Redirect if logged in

@@ -3,7 +3,7 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { Menu, Grid, Header } from "semantic-ui-react";
 import PropTypes from "prop-types";
-function Landing({ authenticated }) {
+const Landing = ({ authenticated }) => {
   if (authenticated) {
     return <Redirect to='/dashboard' />;
   } else {
@@ -27,7 +27,7 @@ function Landing({ authenticated }) {
       </Fragment>
     );
   }
-}
+};
 
 Landing.propTypes = {
   authenticated: PropTypes.bool,
