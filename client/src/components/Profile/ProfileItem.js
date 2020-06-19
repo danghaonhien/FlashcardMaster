@@ -8,20 +8,18 @@ const ProfileItem = ({
     bio,
     user: { name },
   },
-}) => (
-  <div className='profile-top bg-primary p-2'>
-    <h1 className='large'>{name}</h1>
-    <p className='lead'>{school && <span> at {school}</span>}</p>
-    <p>{location && <span>{location}</span>}</p>
-    {bio && (
-      <Fragment>
-        <h2 className='text-primary'>{name.trim().split(" ")[0]}s Bio</h2>
-        <p>{bio}</p>
-        <div className='line' />
-      </Fragment>
-    )}
-  </div>
-);
+}) => {
+  return (
+    <Card
+      fluid
+      color='green'
+      header={name}
+      meta={school}
+      description={location}
+      extra={bio}
+    />
+  );
+};
 
 ProfileItem.propTypes = {
   profile: PropTypes.object.isRequired,
