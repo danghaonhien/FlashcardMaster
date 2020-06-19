@@ -27,7 +27,7 @@ export default function (state = INITIAL_STATE, action) {
       };
 
     case SIGNIN_SUCCESS:
-      // localStorage.setItem("token", payload.token);
+      localStorage.setItem("token", payload.token);
       return {
         ...state,
         ...payload,
@@ -35,7 +35,7 @@ export default function (state = INITIAL_STATE, action) {
         loading: false,
       };
     case SIGNUP_SUCCESS:
-      // localStorage.setItem("token", payload.token);
+      localStorage.setItem("token", payload.token);
       return {
         ...state,
         ...payload,
