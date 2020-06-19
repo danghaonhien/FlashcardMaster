@@ -19,7 +19,7 @@ function SignIn({ signin, authenticated }) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   const onSubmit = (e) => {
     e.preventDefault();
-    signin(email, password);
+    signin({ email, password });
   };
 
   // Redirect if logged in

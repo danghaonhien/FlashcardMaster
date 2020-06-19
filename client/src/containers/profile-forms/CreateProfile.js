@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Form, Segment, Button, Header } from "semantic-ui-react";
 import { Link, withRouter } from "react-router-dom";
 import { createProfile } from "../../actions/profile";
+
 function CreateProfile({ createProfile, history }) {
   const [formData, setFormData] = useState({
     school: "",
