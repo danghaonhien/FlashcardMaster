@@ -40,10 +40,12 @@ module.exports = {
     try {
       const newScore = await new Score({ score, user: req.user.id }).save();
       console.log(newScore);
+      console.log(req.user);
+      const updateUser = await User.findById(req.user.id);
 
-      req.user.scores.push(newScore);
+      updateUser.scores.push(newScore);
 
-      await req.user.save();
+      await updateUser.save();
       return res.status(200).json(newScore);
     } catch (e) {
       console.log(e);

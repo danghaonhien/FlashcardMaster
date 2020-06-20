@@ -3,7 +3,7 @@ import { Button, Modal } from "semantic-ui-react";
 export default (props) => (
   <Modal trigger={<Button color='blue' content='submit' size='small' />} basic>
     <Modal.Content>
-      {/* <h1>your score is :{props.score} </h1>
+      <h1>your score is :{props.score} </h1>
       {props.score === 0 ? (
         <p>0/5 Correct. You need to do more homework!</p>
       ) : null}
@@ -13,8 +13,8 @@ export default (props) => (
       {props.score === 80 ? <p>4/5 Correct</p> : null}
       {props.score === 100 ? (
         <p>5/5 Correct. Congratulation, you are a genius!</p>
-      ) : null} */}
-      <h1>You have completed the quiz successfully!</h1>
+      ) : null}
+      {/* <h1>You have completed the quiz successfully!</h1> */}
     </Modal.Content>
   </Modal>
 );
