@@ -12,7 +12,7 @@ class PostQuestions extends Component {
       await axios.post("/api/post", formValues, {
         headers: { authorization: localStorage.getItem("token") },
       });
-      console.log("iam hit ");
+      // console.log("iam hit ");
       dispatch({ type: ADD_QUESTION });
       dispatch(setAlert("Question Created", "success"));
     } catch (e) {
@@ -54,7 +54,7 @@ class PostQuestions extends Component {
           as='h2'
           color='teal'
           textAlign='center'
-          content='Welcome to do the todo app'
+          content='Create a question'
         />
         <Form size='large' onSubmit={handleSubmit(this.onSubmit)}>
           <Segment stacked>
