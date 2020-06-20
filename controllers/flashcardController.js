@@ -33,7 +33,7 @@ module.exports = {
       if (!FlashcardToDelete) {
         return res.status(401).json({ error: "No Card Found" });
       }
-      if (req.user._id.toString() !== FlashcardToDelete.user.toString()) {
+      if (req.user.id.toString() !== FlashcardToDelete.user.toString()) {
         return res.json(401).json({ error: "You cannot delete this card." });
       }
       const deletedFlashcard = await Flashcard.findByIdAndDelete(flashcardId);

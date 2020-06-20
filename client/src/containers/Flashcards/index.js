@@ -13,8 +13,8 @@ class Flashcard extends Component {
         headers: { authorization: localStorage.getItem("token") },
       });
       dispatch({ type: ADD_FLASHCARD });
-      dispatch(setAlert("Card Created", "success"));
       this.props.getUserFlashcards();
+      dispatch(setAlert("Card Created", "success"));
     } catch (e) {
       dispatch({ type: ADD_FLASHCARD_ERROR, payload: e });
     }
@@ -38,7 +38,14 @@ class Flashcard extends Component {
           <Segment stacked>
             <Field name='front' component={this.renderInput} />
             <Field name='back' component={this.renderInput} />
-            <Button type='submit' fluid color='teal' content='Create' />
+            <Button
+              type='submit'
+              fluid
+              color='teal'
+              content='Create'
+              as={Link}
+              to='/flashcards'
+            />
           </Segment>
         </Form>
         <Button as={Link} to='/dashboard' color='teal'>

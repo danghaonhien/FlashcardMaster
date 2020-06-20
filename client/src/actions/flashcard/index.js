@@ -11,6 +11,7 @@ export const getUserFlashcards = () => async (dispatch) => {
       headers: { authorization: localStorage.getItem("token") },
     });
     dispatch({ type: GET_USER_FLASHCARDS, payload: data });
+    // dispatch(setAlert("Card Created", "success"));
   } catch (e) {
     dispatch({
       type: GET_USER_FLASHCARDS_ERROR,

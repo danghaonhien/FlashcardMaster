@@ -39,8 +39,8 @@ module.exports = {
     }
     try {
       const newScore = await new Score({ score, user: req.user.id }).save();
-      console.log(newScore);
-      console.log(req.user);
+      // console.log(newScore);
+      // console.log(req.user);
       const updateUser = await User.findById(req.user.id);
 
       updateUser.scores.push(newScore);
